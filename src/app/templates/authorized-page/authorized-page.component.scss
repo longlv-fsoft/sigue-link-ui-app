@@ -1,0 +1,30 @@
+.trigger {
+  position: absolute;
+  right: -50px;
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+nz-content {
+  margin: 0 16px;
+}
+
+.wrapper-content {
+  padding: 24px;
+  margin: 0 -16px;
+  background: var(--bg-color);
+  min-height: calc(100vh - 386px);
+}

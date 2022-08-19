@@ -1,0 +1,36 @@
+.sigin-page {
+  background-image: url("../../../assets/images/backgroundLogin.jpg");
+  background-size: 100% 100%;
+  .signin-header-page {
+    height: 75px;
+    background-color: #fff00d;
+    border-bottom: solid 3px #ff0d00;
+    img {
+      height: 75px;
+    }
+  }
+  .signin-form-container {
+    min-height: calc(100vh - 145px);
+    padding: 100px 0;
+    .login-form {
+      max-width: 300px;
+      min-width: 300px;
+      margin: 0 auto;
+    }
+
+    .login-form-margin {
+      margin-bottom: 16px;
+    }
+
+    .login-form-forgot {
+      float: right;
+    }
+
+    .login-form-button {
+      width: 100%;
+    }
+  }
+  nz-footer {
+    background: transparent;
+  }
+}

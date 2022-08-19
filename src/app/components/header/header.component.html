@@ -1,0 +1,39 @@
+<nz-header>
+  <div nz-row nzJustify="space-between">
+    <div nz-col nzXs="24" nzSm="0" class="menu-mobile">
+      <button
+        nz-button
+        nzType="primary"
+        [nzSize]="'large'"
+        (click)="openMenu()"
+      >
+        <i nz-icon nzType="menu" nzTheme="outline"></i>
+      </button>
+    </div>
+    <div nz-col nzXs="0" nzSm="12" class="add-channel">
+    </div>
+    <div nz-col nzXs="0" nzSm="12" class="user-settings">
+      <a
+        *ngIf="isLogined"
+        nz-dropdown
+        nzTrigger="click"
+        [nzDropdownMenu]="menu"
+      >
+        <nz-avatar nzSize="large" nzIcon="user"></nz-avatar>
+      </a>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item>
+            <a href="#" routerLink="/admin">Admin Console</a>
+          </li>
+          <li nz-menu-item>
+            <a href="#" routerLink="/">Go to homepage</a>
+          </li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item (click)="logout()">Logout</li>
+        </ul>
+      </nz-dropdown-menu>
+      <a *ngIf="!isLogined" [routerLink]="'/signin'"> Log in </a>
+    </div>
+  </div>
+</nz-header>

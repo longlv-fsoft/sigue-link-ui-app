@@ -1,0 +1,52 @@
+<nz-row [nzGutter]="16">
+  <nz-col [nzSpan]="6">
+    <nz-statistic
+      [nzValue]="(1949101 | number)!"
+      [nzTitle]="'Active Users'"
+    ></nz-statistic>
+  </nz-col>
+  <nz-col [nzSpan]="6">
+    <nz-statistic
+      [nzValue]="(2019.111 | number: '1.0-2')!"
+      [nzTitle]="'Account Balance (CNY)'"
+    ></nz-statistic>
+  </nz-col>
+  <nz-col [nzSpan]="6">
+    <nz-countdown [nzValue]="deadline" [nzTitle]="'Countdown'"></nz-countdown>
+  </nz-col>
+  <nz-col [nzSpan]="6">
+    <nz-countdown
+      [nzValue]="deadline"
+      [nzTitle]="'Million Seconds'"
+      [nzFormat]="'HH:mm:ss:SSS'"
+    ></nz-countdown>
+  </nz-col>
+</nz-row>
+<nz-row [nzGutter]="16">
+  <nz-col [nzSpan]="6">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(11.28 | number: '1.0-2')!"
+        [nzTitle]="'Active'"
+        [nzPrefix]="prefixTplOne"
+        [nzSuffix]="'%'"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+      <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="6">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(9.3 | number: '1.0-2')!"
+        [nzTitle]="'Idle'"
+        [nzPrefix]="prefixTplTwo"
+        [nzSuffix]="'%'"
+        [nzValueStyle]="{ color: '#CF1322' }"
+      ></nz-statistic>
+      <ng-template #prefixTplTwo
+        ><i nz-icon nzType="arrow-down"></i
+      ></ng-template>
+    </nz-card>
+  </nz-col>
+</nz-row>

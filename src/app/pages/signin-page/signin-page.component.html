@@ -1,0 +1,69 @@
+<nz-layout class="sigin-page">
+  <nz-header class="signin-header-page">
+    <nz-row>
+      <nz-col nzXs="24" class="menu-mobile">
+        <img class="img_size" src="../../assets/images/logoSigue.png" />
+      </nz-col>
+    </nz-row>
+  </nz-header>
+  <nz-content>
+    <nz-row class="signin-form-container">
+      <nz-col [nzSpan]="24" nzJustify="center" nzAlign="middle">
+        <form
+          nz-form
+          [formGroup]="validateForm"
+          class="login-form"
+          (ngSubmit)="submitForm()"
+        >
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-input-group nzPrefixIcon="user">
+                <input
+                  type="text"
+                  nz-input
+                  formControlName="username"
+                  placeholder="Username"
+                />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input your Password!">
+              <nz-input-group nzPrefixIcon="lock">
+                <input
+                  type="password"
+                  nz-input
+                  formControlName="password"
+                  placeholder="Password"
+                />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control
+              [nzSpan]="12"
+              nzErrorTip="Please select language!"
+            >
+              <nz-select
+                id="gender"
+                formControlName="language"
+              >
+                <nz-option nzValue="sp" nzLabel="Spanish"></nz-option>
+                <nz-option nzValue="en" nzLabel="English"></nz-option>
+                <nz-option nzValue="ar" nzLabel="Arabic"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+          <button
+            nz-button
+            class="login-form-button login-form-margin"
+            [nzType]="'primary'"
+          >
+            Log in
+          </button>
+        </form>
+      </nz-col>
+    </nz-row>
+  </nz-content>
+  <nz-footer>Footer</nz-footer>
+</nz-layout>

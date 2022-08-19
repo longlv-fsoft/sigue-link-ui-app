@@ -1,0 +1,23 @@
+<button nz-button class="setting-btn" (click)="open()">
+  <i nz-icon nzType="setting"></i>
+</button>
+<nz-drawer
+  [nzClosable]="true"
+  [nzVisible]="openSetting"
+  nzPlacement="right"
+  nzTitle="Settings"
+  (nzOnClose)="close()"
+>
+  <ng-container *nzDrawerContent>
+    <div nz-row [nzGutter]="[16,24]">
+        <div nz-col class="gutter-row" [nzSpan]="24">
+            <nz-divider nzOrientation="left" nzText="Theme Settings"></nz-divider>
+            <nz-radio-group [(ngModel)]="themeSetting" (ngModelChange)="toggleTheme()">
+                <label nz-radio-button nzValue="dark">Dark</label>
+                <label nz-radio-button nzValue="light">Light</label>
+            </nz-radio-group>
+        </div>
+    </div>
+  </ng-container>
+</nz-drawer
+>

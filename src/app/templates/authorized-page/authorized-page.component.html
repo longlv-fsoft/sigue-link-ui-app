@@ -1,0 +1,35 @@
+<nz-layout class="custom-scroll">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <i
+      class="trigger"
+      nz-icon
+      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+      (click)="isCollapsed = !isCollapsed"
+    ></i>
+    <div class="logo"></div>
+    <ul nz-menu nzMode="inline">
+      <ng-container *ngFor="let item of menus">
+        <li *ngIf="!item.children || (item.children && item.children.length === 0)" nz-menu-item [routerLink]="'/admin' + item.href">
+          <i nz-icon [nzType]="item.icon" *ngIf="item.icon"></i>
+          <span>{{ item.title }}</span>
+        </li>
+        <li *ngIf="item.children && item.children.length > 0" nz-submenu [nzTitle]="item.title" [nzIcon]="item.icon">
+          <ul>
+            <li *ngFor="let child of item.children" nz-menu-item [routerLink]="'/admin' + item.href + child.href">{{child.title}}</li>
+          </ul>
+        </li>
+      </ng-container>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <app-header></app-header>
+    <app-user-settings></app-user-settings>
+    <nz-content>
+      <app-breadcrumb></app-breadcrumb>
+      <div class="wrapper-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <app-footer></app-footer>
+  </nz-layout>
+</nz-layout>

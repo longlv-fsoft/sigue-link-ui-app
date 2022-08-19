@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+:root,
+:root.light {
+  --bg-color: #fff;
+  --text-primary-color: #121;
+}
+
+:root.dark {
+  --bg-color: #121212;
+  --text-primary-color: #fff;
+  --text-anchor-color: #45ADFE;
+}
+
+body,
+.custom-scroll {
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 4px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #b5bccd;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #b5bccd;
+  }
+}
